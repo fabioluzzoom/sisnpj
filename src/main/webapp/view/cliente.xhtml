@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Cliente</title>
+</h:head>
+<h:body>
+	<h:form id="form">
+
+		<p:panel header="ADICIONAR PARTES">
+
+			<p:messages />
+			<h:panelGrid columns="4">
+
+				<h:outputLabel value="CPF:" for="cpf" />
+				<p:inputText id="cpf" label="cpf" value="#{PessoaMB.cliente.cpf}" maxlength="14" size="40" />
+				<h:outputLabel value="NOME:" for="nome" />
+				<p:inputText id="nome" label="nome" value="#{PessoaMB.cliente.nome}" maxlength="14"
+					size="40" />
+				<h:outputLabel value="CEP:" for="cep" />
+				<p:inputText id="cep" label="cep" value="#{PessoaMB.cliente.cep}" maxlength="14" size="40" />
+				<h:outputLabel value="LOGRADOURO:" for="logradouro" />
+				<p:inputText id="logradouro" label="logradouro" value="#{PessoaMB.cliente.logradouro}"
+					maxlength="14" size="40" />
+				<h:outputLabel value="Nº:" for="numero" />
+				<p:inputText id="numero" label="numero" value="#{PessoaMB.cliente.numero}" maxlength="14"
+					size="40" />
+				<h:outputLabel value="COMPLEMENTO:" for="complemento" />
+				<p:inputText id="complemento" label="complemento" value="#{PessoaMB.cliente.complemento}"
+					maxlength="14" size="40" />
+				<h:outputLabel value="BAIRRO:" for="bairro" />
+				<p:inputText id="bairro" label="bairro" value="#{PessoaMB.cliente.bairro}" maxlength="14"
+					size="40" />
+				<h:outputLabel value="UF:" for="uf" />
+				<p:inputText id="uf" label="uf" value="#{PessoaMB.cliente.estado}" maxlength="14" size="40" />
+				<h:outputLabel value="MUNICIPIO:" for="municipio" />
+				<p:inputText id="municipio" label="municipio" value="#{PessoaMB.cliente.municipio}"
+					maxlength="14" size="40" />
+				<h:outputLabel value="EMAIL:" for="email" />
+				<p:inputText id="email" label="email" value="#{PessoaMB.cliente.email}" maxlength="14"
+					size="40" />
+				<h:outputLabel value="TELEFONE01:" for="telefone01" />
+				<p:inputText id="telefone01" label="telefone01" value="#{PessoaMB.cliente.fone01}"
+					maxlength="14" size="40" />
+				<h:outputLabel value="TELEFONE02:" for="telefone02" />
+				<p:inputText id="telefone02" label="telefone02" value="#{PessoaMB.cliente.fone02}"
+					maxlength="14" size="40" />
+					
+					<p:outputLabel for="console" value="PARTE:" />
+        <p:selectOneMenu id="console" value="1" style="width:125px">
+            <f:selectItem itemLabel="AUTOR" itemValue="1" />
+            <f:selectItem itemLabel="RÉU" itemValue="2" />
+			</p:selectOneMenu>
+			</h:panelGrid>
+
+			<p:panelGrid>
+				<p:commandButton style="float:right;" id="btnAdicionar"
+					value="ADICIONAR" actionListener="#{PessoaMB.adicionarCliente()}" update="form" />
+			</p:panelGrid>
+
+			<br />
+			<br />
+			<br />
+
+			<p:dataTable id="tabela" var="cliente" value="#{PessoaMB.clientes}">
+				<f:facet name="header">  
+                    PARTES 
+                </f:facet>
+				<p:column headerText="NOME" style="text-align: center">
+					<h:outputText value="#{cliente.nome}" />
+				</p:column>
+				<p:column headerText="CPF" style="text-align: center">
+					<h:outputText value="#{cliente.cpf}" />
+				</p:column>
+				<p:column headerText="ALTERAR - EXCLUIR" style="text-align: center">
+					<p:commandButton action="null" value="EDITAR" title="Editar"
+						ajax="false">
+						<f:setPropertyActionListener value="" target="" />
+					</p:commandButton>
+					<p:commandButton value="EXCLUIR" title="Excluir"
+						onclick="confirmation.show()" style="margin-left: 5px">
+						<f:setPropertyActionListener value="" target="" />
+					</p:commandButton>
+				</p:column>
+			</p:dataTable>
+<br />
+			<p:panelGrid columns="2">
+
+				<f:facet name="header">
+        			RELATO FATO
+    </f:facet>
+				<p:inputTextarea rows="10" cols="138" id="relatofato" value="1"
+					maxlength="6000" size="300">
+				</p:inputTextarea>
+			</p:panelGrid>
+
+			<br />
+<p:panelGrid>
+				<p:commandButton style="float:right;" id="btnSair" value="SAIR"
+					actionListener="null" update="form" />
+				<p:commandButton style="float:right;" id="btnSalvar" value="SALVAR"
+					actionListener="#{PessoaMB.doSalvarCliente}" update="form" />
+				<br />
+				<br />
+			</p:panelGrid>
+		</p:panel>
+	</h:form>
+
+	<h:form id="dlg">
+		<p:confirmDialog message="Deseja realmente excluir este registro?"
+			hideEffect="explode" header="Aviso" severity="alert"
+			widgetVar="confirmation" modal="true">
+			<p:commandButton id="btnSim" value="Sim"
+				oncomplete="confirmation.hide();" actionListener="null"
+				process="@form" update="form:tabela" />
+			<p:commandButton id="btnNao" value="Não"
+				onclick="confirmation.hide();" type="button" />
+		</p:confirmDialog>
+	</h:form>
+</h:body>
+</html>

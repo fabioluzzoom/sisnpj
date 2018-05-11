@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.unama</groupId>
+	<artifactId>sisnpj</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<dependencies>
+
+		<!-- PostgreSQL JDBC Driver 4.2 -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.1</version>
+		</dependency>
+
+		<!-- JSF 2.1 - API -->
+		<dependency>
+
+			<groupId>com.sun.faces</groupId>
+
+			<artifactId>jsf-api</artifactId>
+
+			<version>2.2.12</version>
+
+		</dependency>
+
+
+		<!-- JSF 2.1 - IMPL -->
+		<dependency>
+
+			<groupId>com.sun.faces</groupId>
+
+			<artifactId>jsf-impl</artifactId>
+
+			<version>2.2.12</version>
+
+		</dependency>
+
+		<!-- PrimeFaces 6.2 -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.2</version>
+		</dependency>
+
+	</dependencies>
+
+</project>
