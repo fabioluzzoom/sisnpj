@@ -1,14 +1,15 @@
 <h1>Sistema de Gerenciamento de Processos do Núcleo de Práticas Jurídicas</h1>
-<p>Autor: Rômulo Pinheiro, Almir Monteiro e Fabio Luz</p>
-<p>Aplicação desenvolvida no Laboratório de Aplicações Computacionais da Universidade da Amazônia - UNAMA. É fornecida gratuitamente "no estado em que se encontra", isentando o autor de qualquer garantia ou danos que possam resultar do uso da mesma.</p>
-<p>Recursos utilizados:
+<p>Autores: Rômulo Pinheiro, Almir Monteiro e Fabio Luz</p>
+<p>Os alunos do curso de direito da UNAMA no NPJ desenvolvem atividades não só referente à advocacia, mas à magistratura, Ministério Público e outras áreas jurídicas, além de atender o público. Entre as tarefas, estão a participação em sessões e audiência, redação de peças processuais, visitas a órgãos judiciários, arbitragens e conciliação. Todas elas orientadas pelo coordenador do Núcleo. O sistema de gerenciamento de processos será desenvolvido para facilitar a gestão de todos os visitantes, processos abertos e os em andamento, peças, controle de estagiários e quantidade e o detalhamento do que cada aluno da UNAMA que trabalha no NPJ produz durante o seu tempo de estágio.</p>
+<p>Ferramentas utilizadas:
   <ul>
     <li>Eclipse IDE 4.7</li>
     <li>JBoss Tools 4.5.3</li>
-    <li>MySQL Server 5.1.53-community</li>
     <li>Java 1.8.0</li>
     <li>JSF 2.1</li>
     <li>PostgreSQL 10.4</li>
     <li>PostgreSQL JDBC Driver 4.2</li>
   </ul>
 </p>
+<p>Pré-visualização:</p>
+<img src="sisnpj/mockups/mockup-01" alt="Tela 01 - Atendimento inicial">
