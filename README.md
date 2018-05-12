@@ -12,4 +12,4 @@
   </ul>
 </p>
 <p>Pré-visualização:</p>
-<img src="sisnpj/mockups/mockup-01" alt="Tela 01 - Atendimento inicial">
+<img src="https://github.com/fabioluzzoom/sisnpj/blob/master/mockups/mockup-01.png?raw=true" alt="Tela 01 - Atendimento Inicial">
